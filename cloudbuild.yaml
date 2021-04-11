@@ -6,10 +6,7 @@ steps:
 
 - name: node 
   entrypoint: npm
-  args: ['run', 'build']
-  env:
-    - 'CONFIG_FILE_PATH=react-app/'
-    - 'SOURCE_DIRECTORY=react-app/'
+  args: ['run', '--prefix', 'react-app/', 'build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
