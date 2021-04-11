@@ -1,10 +1,10 @@
 steps:
 
-- name: node install
+- name: node
   entrypoint: npm
   args: ['install']
 
-- name: node react build 
+- name: node 
   entrypoint: npm
   args: ['run', '--prefix react-app', 'build']
 
