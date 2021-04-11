@@ -1,4 +1,13 @@
 steps:
+
+- name: node install
+  entrypoint: npm
+  args: ['install']
+
+- name: node react build 
+  entrypoint: npm
+  args: ['run', '--prefix react-app', 'build']
+
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy microservices/src/frontend/app.yaml microservices/src/orders/orders.yaml microservices/src/products/products.yaml']
