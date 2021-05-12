@@ -13,11 +13,8 @@
   },
   "scripts": {
     "start": "serve -s public",
-    "prebuild": "npm run build:monolith",
     "build": "react-scripts build",
     "postbuild": "node scripts/post-build.js ./build ../microservices/src/frontend/public",
-    "build:monolith": "env-cmd -f .env.monolith react-scripts build",
-    "postbuild:monolith": "node scripts/post-build.js ./build ../monolith/public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
